@@ -1,39 +1,94 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var d = new Date();
-var schema = new mongoose.Schema({
+var schema = new mongoose.Schema(
+  {
     f_name: {
-        type: String,
-        default:''
+      type: String,
+      default: "",
     },
     l_name: {
-        type: String,
-        default: ''
+      type: String,
+      default: "",
     },
     email: {
-        type: String,
-        default:'',
-        unique: true,
+      type: String,
+      default: "",
+      unique: true,
     },
     password: {
-        type: String,
-        default:'',
+      type: String,
+      default: "",
     },
     mobile_no: {
-        type: Number,
-        default: ''
+      type: Number,
+      default: "",
+    },
+    picture: {
+      type: String,
+      default: "",
     },
     role_opt: {
-        type: String,
-        default: 'Licensee'
+      type: String,
+      default: "Licensee",
     },
-    join_Date: {
-        type: String,
-        default: d.toDateString()
+    createdAt: {
+      type: String,
+      default: d.toDateString(),
     },
     status: {
-        type: String,
-        default: 'Active'
-    }
-}, { unique: false });
-var licensee = new mongoose.model('licensee', schema);
+      type: String,
+      default: "Active",
+    },
+    access_token: {
+      type: String,
+      default: "",
+    },
+    ftLogin: {
+      type: String,
+      default: "",
+    },
+    crdtLmt: {
+      type: String,
+      default: "",
+    },
+    country: {
+      type: String,
+      default: "",
+    },
+    currencyCode: {
+      type: String,
+      default: "",
+    },
+    org_id: {
+      type: String,
+      default: "",
+    },
+    org_name: {
+      type: String,
+      default: "",
+    },
+    org_logo: {
+      type: String,
+      default: "",
+    },
+    updatedAt: {
+      type: String,
+      default: d.toDateString(),
+    },
+    createdBy: {
+      type: String,
+      default: "",
+    },
+    updatedBy: {
+      type: String,
+      default: "",
+    },
+    userType: {
+      type: String,
+      default: "",
+    },
+  },
+  { unique: false }
+);
+var licensee = new mongoose.model("licensee", schema);
 module.exports = licensee;
