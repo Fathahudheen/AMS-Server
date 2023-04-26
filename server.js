@@ -26,11 +26,13 @@ mongoose.connect(dbConfig.url, {
 
 const LicenseeRoute = require('./app/routes/licensee.routes');
 app.use('/licensee',LicenseeRoute);
+const myteamRoute = require('./app/routes/myteam.routes ');
+app.use('/myteam',myteamRoute);
 
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
 });
 
-app.listen(9000, () => {
-    console.log("Server is listening on port 9000");
+app.listen(8000, () => {
+    console.log("Server is listening on port 8000");
 });
