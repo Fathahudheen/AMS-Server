@@ -28,6 +28,8 @@ const LicenseeRoute = require('./app/routes/licensee.routes');
 app.use('/licensee',LicenseeRoute);
 const myteamRoute = require('./app/routes/myteam.routes ');
 app.use('/myteam',myteamRoute);
+const AdmissionRoute = require('./app/routes/admission.routes');
+app.use('/std_profile',AdmissionRoute);
 
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
