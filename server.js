@@ -30,6 +30,8 @@ const myteamRoute = require('./app/routes/myteam.routes ');
 app.use('/myteam',myteamRoute);
 const AdmissionRoute = require('./app/routes/admission.routes');
 app.use('/std_profile',AdmissionRoute);
+const CourseRoute = require('./app/routes/course.routes');
+app.use('/course',CourseRoute);
 
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
