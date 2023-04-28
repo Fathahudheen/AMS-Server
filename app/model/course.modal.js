@@ -7,6 +7,9 @@ var schema = new mongoose.Schema({
     },
     crs_name: {
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default:'',
        
     },

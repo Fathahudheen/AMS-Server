@@ -30,7 +30,7 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (req, res) => {
     try {
-        const crse= await courseModel.find();
+        const crse= await courseModel.find().sort({ ctd_date : 1,_id:-1});
         res.status(200).json(crse);
     } catch(error) {
         res.status(404).json({message: error.message});
