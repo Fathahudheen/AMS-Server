@@ -4,10 +4,16 @@ var schema = new mongoose.Schema(
   {
     f_name: {
       type: String,
+      set: function(value) {
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      },
       default: "",
     },
     l_name: {
       type: String,
+      set: function(value) {
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      },
       default: "",
     },
     email: {
@@ -44,8 +50,8 @@ var schema = new mongoose.Schema(
       default: "",
     },
     ftLogin: {
-      type: String,
-      default: "",
+      type: Boolean,
+      default: true,
     },
     crdtLmt: {
       type: String,
