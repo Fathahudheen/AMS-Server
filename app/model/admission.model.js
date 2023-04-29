@@ -1,10 +1,15 @@
 var mongoose = require('mongoose');
 var d = new Date();
 var schema = new mongoose.Schema({
+    enq_id:{
+        type:String,             
+    },
+    followup_id:{
+        type:String,             
+    },
     reg_no:{
-        type:String,
-             
-            },
+        type:String,      
+     },
     fname:{
         type:String,
         default: ''
@@ -65,76 +70,57 @@ var schema = new mongoose.Schema({
     },
     mobile:{
         type:Number,
-        default: ''
-        
+        default: ''        
     },
-    // role_opt: {
-    //     type: String,
-    //     default: 'Student'
-    // },
+    altPhone:{
+        type:Number,
+        default: ''
+    },
+    picture:{
+        type:String,
+        default: ''
+    },
+	signature:{
+        type:String,
+        default: ''
+    },
+    recpNo:{
+        type:String,
+        default: ''
+    },
+	amount:{
+        type:String,
+        default: ''
+    },
+	org_id:{
+        type:String,
+        default: ''
+    },
     createdAt: {
         type: String,
         default: d.toDateString()
+    },
+    createdBy:{
+        type:String,
+        default: ''
     },
     updatedAt: {
         type: String,
         default: d.toDateString()
     },
+    updatedBy:{
+        type:String,
+        default: ''
+    },
+    remarks:{
+        type:String,
+        default: ''
+    },
     status: {
         type: String,
         default: 'Active'
     }
-}, { unique: false });
-    // altphone:{
-    //     type:String,
-       
-    //     unique: true
-    // },
-    // photo:{
-    //     type:String,
-    //     // required: true,
-    // },
-    // signature:{
-    //     type:String,
-    //     // required: true,
-    // },
-    // recpNo:{
-    //     type:String,
-    //     // required: true,
-    //     // unique: true
-    // },
-    // amount:{
-    //     type:Number,
-        
-    //  },
-    // createdAt:{
-    //     type:String,
-    //     // required: true,
-    // },
-    // createdBy:{
-    //     type:String,
-    //     // required: true,
-    // },
-    // updatedAt:{
-    //     type:String,
-    //     // required: true,
-    // },
-    // updatedBy:{
-    //     type:String,
-    //     // required: true,
-    // },
-    // remarks:{
-    //     type:String,
-    //     // required: true,
-    // },
-    // status:{
-    //     type:String,
-    //     // required: true,
-    // },
-    
-    
-
-// });
+}, { unique: false }); 
 
 var std_profile = new mongoose.model('std_profile', schema);
 
