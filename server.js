@@ -33,6 +33,10 @@ app.use('/std_profile',AdmissionRoute);
 const CourseRoute = require('./app/routes/course.routes');
 app.use('/course',CourseRoute);
 
+const supportenqRoute = require('./app/routes/supportEnq.routes')
+app.use('/supportEnq',supportenqRoute)
+
+
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
 });
