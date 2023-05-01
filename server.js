@@ -48,6 +48,10 @@ const modeRoute = require('./app/routes/source.routes');
 app.use('/source',modeRoute);
 
 
+const modeRoute = require('./app/routes/mode.routes');
+app.use('/mode',modeRoute);
+
+
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
 });
