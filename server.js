@@ -36,8 +36,15 @@ app.use('/course',CourseRoute);
 const supportenqRoute = require('./app/routes/supportEnq.routes')
 app.use('/supportEnq',supportenqRoute)
 
+
+const supportTypeRoute = require('./app/routes/supportType.routes')
+app.use('/supportType',supportTypeRoute)
+
+
+
 const modeRoute = require('./app/routes/source.routes');
 app.use('/source',modeRoute);
+
 
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
