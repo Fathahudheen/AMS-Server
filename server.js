@@ -36,6 +36,8 @@ app.use('/course',CourseRoute);
 const supportenqRoute = require('./app/routes/supportEnq.routes')
 app.use('/supportEnq',supportenqRoute)
 
+const UserRoute = require('./app/routes/enq.routes')
+app.use('/enquiry',UserRoute)
 
 const supportTypeRoute = require('./app/routes/supportType.routes')
 app.use('/supportType',supportTypeRoute)
