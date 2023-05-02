@@ -2,20 +2,29 @@ var mongoose = require('mongoose');
 var d = new Date();
 var schema = new mongoose.Schema({
     enq_id:{
-        type:String,             
+        type:String,
+        unique: true             
     },
     followup_id:{
-        type:String,             
+        type:String, 
+        unique: true            
     },
     reg_no:{
-        type:String,      
+        type:String,  
+        unique: true    
      },
     fname:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     lname:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     dob:{
@@ -25,29 +34,48 @@ var schema = new mongoose.Schema({
     gender:{
         type:String,
         
+        
     },
     qualification:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     course_opted:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     guardian:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     relationship:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     addLine1:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     addLine2:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     pincode:{
@@ -56,10 +84,16 @@ var schema = new mongoose.Schema({
     },
     district:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     state:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
    
@@ -72,7 +106,7 @@ var schema = new mongoose.Schema({
         type:Number,
         default: ''        
     },
-    altPhone:{
+    altphone:{
         type:Number,
         default: ''
     },
@@ -86,7 +120,8 @@ var schema = new mongoose.Schema({
     },
     recpNo:{
         type:String,
-        default: ''
+        default: '',
+        unique: true
     },
 	amount:{
         type:String,
@@ -102,6 +137,9 @@ var schema = new mongoose.Schema({
     },
     createdBy:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     updatedAt: {
@@ -110,10 +148,16 @@ var schema = new mongoose.Schema({
     },
     updatedBy:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     remarks:{
         type:String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     status: {
