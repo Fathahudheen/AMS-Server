@@ -4,32 +4,49 @@ var d = new Date();
 var schema = new mongoose.Schema({
     support_type:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
+       
     },
     ticket_no:{
         type: String,
-        default: "",
-        unique:true,   
+        unique:true,
+           
     },
     enq_from:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
+
     },
     enq_to:{
         type: String,
-        default: "",  
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
+        default: "",
+  
     },
     descp:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
+
     },
     email:{
         type: String,
-        unique:true
+        unique:true,
     },
     mobile:{
         type:String,  
-        unique:true}
+        unique:true,
+    }
     ,
     org_id:{
         type: String,
@@ -41,7 +58,11 @@ var schema = new mongoose.Schema({
     },
     createdBy:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
+
     },
     updatedAt:{
         type:String,
@@ -50,7 +71,11 @@ var schema = new mongoose.Schema({
     },
     updatedBy:{
         type: String,
-        default: "", 
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          }, 
+        default: "",
+
     },
     status:{
         type:String,
@@ -58,6 +83,9 @@ var schema = new mongoose.Schema({
     },
     remarks:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
     }
 })

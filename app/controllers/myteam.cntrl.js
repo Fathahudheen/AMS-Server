@@ -29,7 +29,7 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (req, res) => {
     try {
-        const myteam= await myteamModel.find();
+        const myteam= await myteamModel.find().sort({ _id:-1});
         res.status(200).json(myteam);
     } catch(error) {
         res.status(404).json({message: error.message});

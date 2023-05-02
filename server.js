@@ -6,7 +6,7 @@ const dbConfig = require ('./config/db.config')
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "http://localhost:3001"
   };
 app.use(cors(corsOptions));
 
@@ -36,14 +36,18 @@ app.use('/course',CourseRoute);
 const supportenqRoute = require('./app/routes/supportEnq.routes')
 app.use('/supportEnq',supportenqRoute)
 
+const UserRoute = require('./app/routes/enq.routes')
+app.use('/enquiry',UserRoute)
 
 const supportTypeRoute = require('./app/routes/supportType.routes')
 app.use('/supportType',supportTypeRoute)
 
 
 
+
 const sourceRoute = require('./app/routes/source.routes');
 app.use('/source',sourceRoute);
+
 
 
 const modeRoute = require('./app/routes/mode.routes');
