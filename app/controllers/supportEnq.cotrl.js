@@ -45,7 +45,7 @@ exports.create = async(req, res) =>{
 
 exports.findAll = async (req, res) => {
     try{
-        const supportEnq = await UserModel.find();
+        const supportEnq = await UserModel.find().sort({createdAt : 1,_id:-1});
         res.status(200).json(supportEnq);
     }catch(error){
         res.status(404).json({
