@@ -44,8 +44,10 @@ app.use('/supportType',supportTypeRoute)
 
 
 
-const SourceRoute = require('./app/routes/source.routes');
-app.use('/source',SourceRoute);
+
+const sourceRoute = require('./app/routes/source.routes');
+app.use('/source',sourceRoute);
+
 
 
 const modeRoute = require('./app/routes/mode.routes');
