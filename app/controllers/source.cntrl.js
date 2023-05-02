@@ -51,7 +51,7 @@ exports.findOne = async (req, res) => {
 exports.update = async (req, res) => {
     if(!req.body) {
         res.status(400).send({
-            message: "Data to update can not be empty!"
+            message: "Data to update can not be Empty!"
         });
     }
     
