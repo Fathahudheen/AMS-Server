@@ -58,7 +58,7 @@ exports.create = async (req, res) => {
 // Retrieve all users from the database.
 exports.findAll = async (req, res) => {
   try {
-    const enq = await enqModel.find();
+    const enq = await enqModel.find().sort({ createdAt : 1,_id:-1});
     res.status(200).json(enq);
   } catch (error) {
     res.status(404).json({ message: error.message });
