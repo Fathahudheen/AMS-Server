@@ -23,18 +23,26 @@ mongoose.connect(dbConfig.url, {
     console.log('Could not connect to the database', err);
     process.exit();
 });
+const userLogin = require('./app/routes/login.routes');
+app.use('/login',userLogin);
 
-const LicenseeRoute = require('./app/routes/licensee.routes');
+const LicenseeRoute = require('./app/routes/licensee.routes');<<<<<<< login
 app.use('/licensee',LicenseeRoute);
 const myteamRoute = require('./app/routes/myteam.routes ');
 app.use('/myteam',myteamRoute);
+
 const AdmissionRoute = require('./app/routes/admission.routes');
 app.use('/std_profile',AdmissionRoute);
+
 const CourseRoute = require('./app/routes/course.routes');
 app.use('/course',CourseRoute);
 
 const supportenqRoute = require('./app/routes/supportEnq.routes')
 app.use('/supportEnq',supportenqRoute)
+
+
+
+
 
 const UserRoute = require('./app/routes/enq.routes')
 app.use('/enquiry',UserRoute)
@@ -42,13 +50,8 @@ app.use('/enquiry',UserRoute)
 const supportTypeRoute = require('./app/routes/supportType.routes')
 app.use('/supportType',supportTypeRoute)
 
-
-
-
 const sourceRoute = require('./app/routes/source.routes');
 app.use('/source',sourceRoute);
-
-
 
 const modeRoute = require('./app/routes/mode.routes');
 app.use('/mode',modeRoute);
@@ -57,7 +60,9 @@ app.use('/mode',modeRoute);
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
 });
-
 app.listen(8000, () => {
     console.log("Server is listening on port 8000");
+
+
 });
+
