@@ -36,6 +36,15 @@ exports.findAll = async (req, res) => {
     }
 };
 
+exports.findCount = async (req, res) => {
+    try {
+        const licensee = await licenseeModel.find();
+        res.status(200).json(licensee.length);
+    } catch(error) {
+        res.status(404).json({message: error.message});
+    }
+};
+
 exports.findOne = async (req, res) => {
     try {
         const licensee = await licenseeModel.findById(req.params.id);
