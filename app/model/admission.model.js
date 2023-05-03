@@ -3,15 +3,15 @@ var d = new Date();
 var schema = new mongoose.Schema({
     enq_id:{
         type:String,
-        unique: true             
+                   
     },
     followup_id:{
         type:String, 
-        unique: true            
+                  
     },
     reg_no:{
         type:String,  
-        unique: true    
+        unique: true
      },
     fname:{
         type:String,
@@ -121,7 +121,7 @@ var schema = new mongoose.Schema({
     recpNo:{
         type:String,
         default: '',
-        unique: true
+        
     },
 	amount:{
         type:String,
