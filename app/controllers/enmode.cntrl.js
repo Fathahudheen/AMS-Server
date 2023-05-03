@@ -1,4 +1,4 @@
-const modeModel = require('../model/mode.model');
+const modeModel = require('../model/enmode.model');
 
 // Create and Save a new user
 exports.create = async (req, res) => {
@@ -6,18 +6,18 @@ exports.create = async (req, res) => {
         res.status(400).send({ message: "Content can not be empty!" });
     }
     
-    const mode = new modeModel({
+    const enmode = new modeModel({
         name: req.body.name,
         description: req.body.description,
         status: req.body.status,
         createdAt:req.body.status,
         updatedAt:req.body.status
     });
-    await mode.save().then(data => {
+    await enmode.save().then(data => {
        
         res.send({
             message:"User created successfully!!",
-            mode:data
+            enmode:data
         });
     }).catch(err => {
         
@@ -29,8 +29,8 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (req, res) => {
     try {
-        const mode = await modeModel.find();
-        res.status(200).json(mode);
+        const enmode = await modeModel.find();
+        res.status(200).json(enmode);
     } catch(error) {
         res.status(404).json({message: error.message});
     }
@@ -38,8 +38,8 @@ exports.findAll = async (req, res) => {
 
 exports.findOne = async (req, res) => {
     try {
-        const mode = await modeModel.findById(req.params.id);
-        res.status(200).json(mode);
+        const enmode = await modeModel.findById(req.params.id);
+        res.status(200).json(enmode);
     } catch(error) {
         res.status(404).json({ message: error.message});
     }

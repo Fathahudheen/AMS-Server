@@ -25,5 +25,5 @@ var schema = new mongoose.Schema({
     
   
 }, { unique: false });
-var mode = new mongoose.model('mode', schema);
-module.exports = mode;
+var enmode = new mongoose.model('enmode', schema);
+module.exports = enmode;

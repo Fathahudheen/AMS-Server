@@ -48,8 +48,8 @@ const SourceRoute = require('./app/routes/source.routes');
 app.use('/source',SourceRoute);
 
 
-const modeRoute = require('./app/routes/mode.routes');
-app.use('/mode',modeRoute);
+const enmodeRoute = require('./app/routes/enmode.routes');
+app.use('/enmode',enmodeRoute);
 
 
 app.get('/', (req, res) => {

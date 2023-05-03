@@ -1,5 +1,5 @@
 const express = require("express");
-const LicenseeController = require("../controllers/mode.cntrl");
+const LicenseeController = require("../controllers/enmode.cntrl");
 const router = express.Router();
 
 router.get("/", LicenseeController.findAll);
