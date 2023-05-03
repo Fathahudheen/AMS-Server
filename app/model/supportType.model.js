@@ -4,10 +4,16 @@ var d = new Date();
 var schema = new mongoose.Schema({
     name:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
     },
        descp:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
     },
     org_id:{
@@ -20,6 +26,9 @@ var schema = new mongoose.Schema({
     },
     createdBy:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "",
     },
     updatedAt:{
@@ -29,6 +38,9 @@ var schema = new mongoose.Schema({
     },
     updatedBy:{
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: "", 
     },
     status:{

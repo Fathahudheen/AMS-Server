@@ -7,6 +7,7 @@ var schema = new mongoose.Schema({
             return value.charAt(0).toUpperCase() + value.slice(1);
           },
         default:''
+        
     },
     description: {
         type: String,
@@ -39,5 +40,5 @@ var schema = new mongoose.Schema({
     
   
 }, { unique: false });
-var source = new mongoose.model('source', schema);
-module.exports = source;
+var mode = new mongoose.model('mode', schema);
+module.exports = mode;

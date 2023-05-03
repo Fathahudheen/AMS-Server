@@ -1,4 +1,4 @@
-const modeModel = require('../model/source.model');
+const modeModel = require('../model/mode.model');
 
 // Create and Save a new user
 exports.create = async (req, res) => {
@@ -6,7 +6,7 @@ exports.create = async (req, res) => {
         res.status(400).send({ message: "Content can not be empty!" });
     }
     
-    const source = new modeModel({
+    const mode = new modeModel({
         name: req.body.name,
         description: req.body.description,
         status: req.body.status,
@@ -14,13 +14,13 @@ exports.create = async (req, res) => {
         updatedAt:req.body.updatedAt,
         createdBy:req.body.createdBy,
         updatedBy:req.body.updatedBy
-    
+
     });
-    await source.save().then(data => {
+    await mode.save().then(data => {
        
         res.send({
             message:"User created successfully!!",
-            source:data
+            mode:data
         });
     }).catch(err => {
         
@@ -32,8 +32,8 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (req, res) => {
     try {
-        const source = await modeModel.find().sort({ createdAt : 1,_id:-1});
-        res.status(200).json(source);
+        const mode = await modeModel.find().sort({ createdAt : 1,_id:-1});
+        res.status(200).json(mode);
     } catch(error) {
         res.status(404).json({message: error.message});
     }
@@ -41,8 +41,8 @@ exports.findAll = async (req, res) => {
 
 exports.findOne = async (req, res) => {
     try {
-        const source = await modeModel.findById(req.params.id);
-        res.status(200).json(source);
+        const mode = await modeModel.findById(req.params.id);
+        res.status(200).json(mode);
     } catch(error) {
         res.status(404).json({ message: error.message});
     }
@@ -51,7 +51,7 @@ exports.findOne = async (req, res) => {
 exports.update = async (req, res) => {
     if(!req.body) {
         res.status(400).send({
-            message: "Data to update can not be Empty!"
+            message: "Data to update can not be empty!"
         });
     }
     

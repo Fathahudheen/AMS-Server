@@ -3,10 +3,16 @@ var d = new Date();
 var schema = new mongoose.Schema({
     f_name: {
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default:''
     },
     l_name: {
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     email: {
