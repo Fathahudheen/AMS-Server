@@ -20,7 +20,7 @@ mongoose.connect(dbConfig.url, {
 }).then(() => {
     console.log("Databse Connected Successfully!!");    
 }).catch(err => {
-    console.log('Could not connect to the database', err);
+    console.log('Could not connect to the Database', err);
     process.exit();
 });
 const userLogin = require('./app/routes/login.routes');
@@ -53,8 +53,8 @@ app.use('/supportType',supportTypeRoute)
 const sourceRoute = require('./app/routes/source.routes');
 app.use('/source',sourceRoute);
 
-const modeRoute = require('./app/routes/mode.routes');
-app.use('/mode',modeRoute);
+const enmodeRoute = require('./app/routes/enmode.routes');
+app.use('/enmode',enmodeRoute);
 
 
 app.get('/', (req, res) => {
