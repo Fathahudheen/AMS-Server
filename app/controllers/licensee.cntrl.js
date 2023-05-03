@@ -27,6 +27,15 @@ exports.create = async (req, res) => {
     });
 };
 
+exports.findAllLicensee = async (req, res) => {
+    try {
+        const licensee = await licenseeModel.find({role_opt:'Licensee'}).sort({ _id:-1});
+        res.status(200).json(licensee);
+    } catch(error) {
+        res.status(404).json({message: error.message});
+    }
+};
+
 exports.findAll = async (req, res) => {
     try {
         const licensee = await licenseeModel.find().sort({ _id:-1});
@@ -36,9 +45,9 @@ exports.findAll = async (req, res) => {
     }
 };
 
-exports.findCount = async (req, res) => {
+exports.findLicenseeCount = async (req, res) => {
     try {
-        const licensee = await licenseeModel.find();
+        const licensee = await licenseeModel.find({role_opt:'Licensee'});
         res.status(200).json(licensee.length);
     } catch(error) {
         res.status(404).json({message: error.message});
