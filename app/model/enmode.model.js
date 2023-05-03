@@ -3,10 +3,17 @@ var d = new Date();
 var schema = new mongoose.Schema({
     name: {
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default:''
+        
     },
     description: {
         type: String,
+        set: function(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          },
         default: ''
     },
     createdAt: {
@@ -16,6 +23,14 @@ var schema = new mongoose.Schema({
     updatedAt: {
         type: String,
         default: d.toDateString()
+    },
+    createdBy: {
+        type: String,
+        default: ''
+    },
+    updatedBy: {
+        type: String,
+        default: ''
     },
     status: {
         type: String,

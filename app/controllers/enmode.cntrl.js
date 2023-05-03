@@ -2,7 +2,7 @@ const modeModel = require('../model/enmode.model');
 
 // Create and Save a new user
 exports.create = async (req, res) => {
-    if (!req.body.name && !req.body.description && !req.body.status && !req.body.createdAt && !req.body.updatedAt) {
+    if (!req.body.name && !req.body.description && !req.body.status && !req.body.createdAt && !req.body.updatedAt&& !req.body.createdBy && !req.body.updatedBy) {
         res.status(400).send({ message: "Content can not be empty!" });
     }
     
@@ -10,8 +10,11 @@ exports.create = async (req, res) => {
         name: req.body.name,
         description: req.body.description,
         status: req.body.status,
-        createdAt:req.body.status,
-        updatedAt:req.body.status
+        createdAt:req.body.createdAt,
+        updatedAt:req.body.updatedAt,
+        createdBy:req.body.createdBy,
+        updatedBy:req.body.updatedBy
+
     });
     await enmode.save().then(data => {
        
@@ -29,8 +32,13 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (req, res) => {
     try {
+<<<<<<< HEAD:app/controllers/enmode.cntrl.js
         const enmode = await modeModel.find();
         res.status(200).json(enmode);
+=======
+        const mode = await modeModel.find().sort({ createdAt : 1,_id:-1});
+        res.status(200).json(mode);
+>>>>>>> master:app/controllers/mode.cntrl.js
     } catch(error) {
         res.status(404).json({message: error.message});
     }

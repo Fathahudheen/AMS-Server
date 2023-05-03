@@ -29,8 +29,17 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (req, res) => {
     try {
-        const licensee = await licenseeModel.find().sort({ createdAt : 1,_id:-1});
+        const licensee = await licenseeModel.find().sort({ _id:-1});
         res.status(200).json(licensee);
+    } catch(error) {
+        res.status(404).json({message: error.message});
+    }
+};
+
+exports.findCount = async (req, res) => {
+    try {
+        const licensee = await licenseeModel.find();
+        res.status(200).json(licensee.length);
     } catch(error) {
         res.status(404).json({message: error.message});
     }

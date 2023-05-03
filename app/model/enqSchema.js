@@ -4,10 +4,16 @@ var schema = new mongoose.Schema({
 
   fname: {
     type: String,
+    set: function(value) {
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
     default: "",
   },
   lname: {
     type: String,
+    set: function(value) {
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
     default: "",
   },
   mobile: {
@@ -28,6 +34,9 @@ var schema = new mongoose.Schema({
   },
   enq_for: {
     type: String,
+    set: function(value) {
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
   },
   loc: {
     type: String,

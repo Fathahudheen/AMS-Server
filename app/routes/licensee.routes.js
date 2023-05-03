@@ -3,6 +3,7 @@ const LicenseeController = require("../controllers/licensee.cntrl");
 const router = express.Router();
 
 router.get("/", LicenseeController.findAll);
+router.get("/count", LicenseeController.findCount);
 router.get("/:id", LicenseeController.findOne);
 router.post("/", LicenseeController.create);
 router.patch("/:id", LicenseeController.update);

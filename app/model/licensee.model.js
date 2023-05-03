@@ -93,6 +93,10 @@ var schema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    token: {
+      type: String,
+      default: "",
+    }
   },
   { unique: false }
 );
