@@ -26,7 +26,7 @@ mongoose.connect(dbConfig.url, {
 const userLogin = require('./app/routes/login.routes');
 app.use('/login',userLogin);
 
-const LicenseeRoute = require('./app/routes/licensee.routes');<<<<<<< login
+const LicenseeRoute = require('./app/routes/licensee.routes');
 app.use('/licensee',LicenseeRoute);
 const myteamRoute = require('./app/routes/myteam.routes ');
 app.use('/myteam',myteamRoute);
