@@ -32,13 +32,8 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (req, res) => {
     try {
-<<<<<<< HEAD:app/controllers/enmode.cntrl.js
-        const enmode = await modeModel.find();
-        res.status(200).json(enmode);
-=======
         const mode = await modeModel.find().sort({ createdAt : 1,_id:-1});
         res.status(200).json(mode);
->>>>>>> master:app/controllers/mode.cntrl.js
     } catch(error) {
         res.status(404).json({message: error.message});
     }
