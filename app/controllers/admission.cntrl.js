@@ -3,18 +3,16 @@ const UserModel = require('../model/admission.model')
 // Create and Save a new user
 exports.create = async (req, res) => {
 
-    if (  !req.body.enq_id && !req.body.followup_id && !req.body.reg_no &&  !req.body.fname && !req.body.lname && !req.body.dob && !req.body.gender && !
+    if (!req.body.reg_no && ! !req.body.fname && !!req.body.lname && !req.body.dob && !req.body.gender && !
         req.body.qualification && !req.body.course_opted && !req.body.guardian && !req.body.relationship && !
-        req.body.addLine1 && !req.body.addLine2 && !req.body.district && !req.body.state && !req.body.pincode && !
-        req.body.email && !req.body.mobile && !req.body.altphone && !req.body.photo && !req.body.signature && !req.body.org_id && !
+        req.body.addLine1 && !req.body.addLine2 && !req.body.district && !req.body.state && !req.body.pincode&& !
+        req.body.email && !req.body.mobile && !req.body.altphone && !req.body.photo && !req.body.signature && !
         req.body.recpNo && !req.body.amount && !req.body.createdAt && !req.body.createdBy && !req.body.updatedAt && ! 
         req.body.updatedBy && !req.body.remarks && !req.body.status) {
-        res.status(400).send({ message: "Content can not be empty!" });
+        res.status(400).send({ message: "Content can not be Empty!" });
     }
     
     const std_profile = new UserModel({
-        enq_id: req.body.enq_id,
-        followup_id: req.body.followup_id,
         reg_no: req.body.reg_no,
         fname: req.body.fname,
         lname: req.body.lname,
@@ -34,7 +32,6 @@ exports.create = async (req, res) => {
         altphone: req.body.altphone,
         photo: req.body.photo,
         signature: req.body.signature,
-        org_id: req.body.org_id,
         recpNo: req.body.recpNo,
         amount: req.body.amount,
         createdAt: req.body.createdAt,
