@@ -56,6 +56,25 @@ app.use('/source',sourceRoute);
 const enmodeRoute = require('./app/routes/enmode.routes');
 app.use('/enmode',enmodeRoute);
 
+const courseSetupRoute = require('./app/routes/course_setup.routes');
+app.use('/course_setup', courseSetupRoute);
+
+const courseCategorypRoute = require('./app/routes/course.category.routes');
+app.use('/course_ctgry', courseCategorypRoute);
+
+const courseTrackRoute = require('./app/routes/course.track.routes');
+app.use('/course_track', courseTrackRoute);
+
+const courseDurationRoute = require('./app/routes/course.duration.routes');
+app.use('/course_duration', courseDurationRoute);
+
+const courseSubjectRoute = require('./app/routes/subject.routes');
+app.use('/course_subject', courseSubjectRoute);
+
+const courseTopicRoute = require('./app/routes/course.topic.routes');
+app.use('/course_topic', courseTopicRoute);
+
+
 
 app.get('/', (req, res) => {
     res.json({"message": "Hello Your Server Is Running"});
