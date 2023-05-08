@@ -30,7 +30,7 @@ var schema = new mongoose.Schema({
     },
     role_opt: {
         type: String,
-        default: 'Myteam'
+        default: ''
     },
     join_Date: {
         type: String,

@@ -2,7 +2,7 @@ const myteamModel = require('../model/myteam.model');
 
 // Create and Save a new user
 exports.create = async (req, res) => {
-    if (!req.body.f_name && !req.body.l_name && !req.body.email && !req.body.password) {
+    if (!req.body.f_name && !req.body.l_name && !req.body.email && req.body.role_opt && !req.body.password) {
         res.status(400).send({ message: "Content can not be empty!" });
     }
     
@@ -10,6 +10,7 @@ exports.create = async (req, res) => {
         f_name: req.body.f_name,
         l_name: req.body.l_name,
         email: req.body.email,
+        role_opt: req.body.role_opt,
         password: req.body.password,
         mobile_no: req.body.mobile_no
     });
