@@ -4,9 +4,9 @@ const courseModel = require('../model/course.modal');
 
 
 exports.create = async (req, res) => {
-    if (!req.body.crs_name && !req.body.crs_ctgry && !req.body.duration && !req.body.crs_dscrp) {
-        res.status(400).send({ message: "Content can not be empty!" });
-    }
+    // if (!req.body.crs_name && !req.body.crs_ctgry && !req.body.duration && !req.body.crs_dscrp) {
+    //     res.status(400).send({ message: "Content can not be empty!" });
+    // }
     
     const crse = new courseModel({
          crs_name: req.body.crs_name,
